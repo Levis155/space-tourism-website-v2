@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Barlow, Barlow_Condensed, Bellefair } from "next/font/google";
 import "./globals.css";
 import Header from "./Header";
+import Link from "next/link";
+import BodyClass from "./BodyClass";
 
 const barlow = Barlow({
   subsets: ["latin"],
@@ -34,14 +36,16 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
+  const fontClasses = `${barlow.variable} ${barlowCondensed.variable} ${bellefair.variable}`;
   return (
     <html lang="en">
-      <body
-        className={`${barlow.variable} ${barlowCondensed.variable} ${bellefair.variable}`}
-      >
+      <BodyClass fontClasses={fontClasses}>
+        <Link className="skip-to-content" href="#main">
+          Skip to content
+        </Link>
         <Header />
         {children}
-      </body>
+      </BodyClass>
     </html>
   );
 }

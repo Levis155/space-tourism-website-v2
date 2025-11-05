@@ -78,7 +78,7 @@ p {
 
 /* set up the body */
 body {
-  font-family: var(--font-barlow);
+  /* font-family: var(--font-barlow); */
   font-size: var(--fs-400);
   color: hsl(var(--clr-white));
   background-color: hsl(var(--clr-dark));
@@ -90,8 +90,6 @@ body {
 
   overflow-x: hidden;
 }
-
-/* Set up the different pages */
 
 /* make images easier to work with */
 img,
@@ -471,7 +469,7 @@ select {
 /* ----------------------------- */
 /* Page specific background      */
 /* ----------------------------- */
-.home {
+body {
   background-size: cover;
   background-position: bottom center;
 }

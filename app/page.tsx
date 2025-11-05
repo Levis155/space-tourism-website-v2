@@ -1,11 +1,6 @@
-import Link from "next/link";
-
 export default function Home() {
   return (
     <div className="home">
-      {/* <Link className="skip-to-content" href="#main">
-        Skip to content
-      </Link> */}
       <main id="main" className="grid-container grid-container--home">
         <div>
           <h1 className="text-accent fs-500 ff-sans-cond uppercase letter-spacing-1">
