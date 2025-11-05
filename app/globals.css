@@ -357,16 +357,12 @@ select {
     right: 1rem;
     top: 2rem;
     background: transparent;
-    background-image: url(/shared/icon-hamburger.svg);
-    background-repeat: no-repeat;
-    background-position: center;
     width: 1.5rem;
     aspect-ratio: 1;
     border: 0;
   }
-
-  .mobile-nav-toggle[aria-expanded="true"] {
-    background-image: url(/shared/icon-close.svg);
+  .mobile-nav-toggle svg {
+    font-size: var(--fs-700);
   }
 
   .mobile-nav-toggle:focus-visible {

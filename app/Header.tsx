@@ -3,40 +3,50 @@
 import classNames from "classnames";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { useState } from "react";
+import { MdOutlineClose } from "react-icons/md";
+import { RxHamburgerMenu } from "react-icons/rx";
 
 const Header = () => {
+  const [isMobileNavOpen, setMobileNavOpen] = useState(false);
+
+  const toggleNav = () => setMobileNavOpen((prev) => !prev);
+
   return (
     <header className="primary-header flex">
       <div>
         <img src="/shared/logo.svg" alt="space tourism logo" className="logo" />
       </div>
-      <button className="mobile-nav-toggle" aria-controls="primary-navigation">
-        <span className="sr-only" aria-expanded="false">
-          Menu
-        </span>
+      <button
+        className="mobile-nav-toggle text-white"
+        aria-controls="primary-navigation"
+        onClick={toggleNav}
+      >
+        <span className="sr-only">Menu</span>
+        {isMobileNavOpen ? <MdOutlineClose /> : <RxHamburgerMenu />}
       </button>
       <nav>
-        <NavLinks />
+        <NavLinks isMobileNavOpen={isMobileNavOpen} />
       </nav>
     </header>
   );
 };
 
-const NavLinks = () => {
+const NavLinks = ({ isMobileNavOpen }: { isMobileNavOpen: boolean }) => {
   const currentPath = usePathname();
 
-  const linksClassName =
-    "--font-barlow-condensed uppercase text-white letter-spacing-2";
   const links = [
     { href: "/", span: "00", label: "Home" },
     { href: "/destination", span: "01", label: "Destination" },
     { href: "/crew", span: "02", label: "Crew" },
     { href: "/technology", span: "03", label: "Technology" },
   ];
+  const linksClassName =
+    "--font-barlow-condensed uppercase text-white letter-spacing-2";
   return (
     <ul
       id="primary-navigation"
-      data-visible="false"
+      data-visible={isMobileNavOpen}
       className="primary-navigation underline-indicators flex"
     >
       {links.map((link) => (
