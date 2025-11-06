@@ -41,8 +41,7 @@ const NavLinks = ({ isMobileNavOpen }: { isMobileNavOpen: boolean }) => {
     { href: "/crew", span: "02", label: "Crew" },
     { href: "/technology", span: "03", label: "Technology" },
   ];
-  const linksClassName =
-    "--font-barlow-condensed uppercase text-white letter-spacing-2";
+
   return (
     <ul
       id="primary-navigation"
@@ -56,7 +55,10 @@ const NavLinks = ({ isMobileNavOpen }: { isMobileNavOpen: boolean }) => {
           })}
           key={link.label}
         >
-          <Link className={linksClassName} href={link.href}>
+          <Link
+            className="ff-barlow-cond uppercase text-white letter-spacing-2"
+            href={link.href}
+          >
             <span aria-hidden="true">{link.span}</span>
             {link.label}
           </Link>

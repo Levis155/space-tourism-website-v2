@@ -78,7 +78,7 @@ p {
 
 /* set up the body */
 body {
-  /* font-family: var(--font-barlow); */
+  font-family: var(--font-barlow);
   font-size: var(--fs-400);
   color: hsl(var(--clr-white));
   background-color: hsl(var(--clr-dark));
@@ -199,6 +199,18 @@ select {
 }
 .text-white {
   color: hsl(var(--clr-white));
+}
+
+/* typography */
+
+.ff-barlow {
+  font-family: var(--font-barlow);
+}
+.ff-barlow-cond {
+  font-family: var(--font-barlow-condensed);
+}
+.ff-bellefair {
+  font-family: var(--font-bellefair);
 }
 
 .letter-spacing-1 {
