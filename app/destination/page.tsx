@@ -1,4 +1,4 @@
-import React from "react";
+import TabList from "./TabList";
 
 const DestinationPage = () => {
   return (
@@ -24,52 +24,7 @@ const DestinationPage = () => {
         <img src="/destination/image-titan.png" alt="the moon titan" />
       </picture>
 
-      <div
-        className="tab-list underline-indicators flex"
-        role="tablist"
-        aria-label="destination list"
-      >
-        <button
-          aria-selected="true"
-          role="tab"
-          aria-controls="moon-tab"
-          className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={0}
-          data-image="moon-image"
-        >
-          Moon
-        </button>
-        <button
-          aria-selected="false"
-          role="tab"
-          aria-controls="mars-tab"
-          className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={-1}
-          data-image="mars-image"
-        >
-          Mars
-        </button>
-        <button
-          aria-selected="false"
-          role="tab"
-          aria-controls="europa-tab"
-          className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={-1}
-          data-image="europa-image"
-        >
-          Europa
-        </button>
-        <button
-          aria-selected="false"
-          role="tab"
-          aria-controls="titan-tab"
-          className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={-1}
-          data-image="titan-image"
-        >
-          Titan
-        </button>
-      </div>
+      <TabList />
 
       {/* The moon */}
       <article
