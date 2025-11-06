@@ -1,3 +1,5 @@
+import Link from "next/link";
+
 export default function Home() {
   return (
     <main id="main" className="grid-container grid-container--home">
@@ -14,12 +16,12 @@ export default function Home() {
         </p>
       </div>
       <div>
-        <a
-          href="destination.html"
+        <Link
+          href="/destination"
           className="large-button uppercase ff-barlow text-dark bg-white"
         >
           Explore
-        </a>
+        </Link>
       </div>
     </main>
   );
