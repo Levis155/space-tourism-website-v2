@@ -8,8 +8,13 @@ const DestinationPage = () => {
   const searchParams = useSearchParams();
   const name = searchParams.get("name") ?? "Moon";
 
-  const destinationIndex =
-    destinations.find((d) => d.label === name)?.index ?? 0;
+  let destinationIndex = 0;
+
+  const match = destinations.find((destination) => destination.label === name);
+
+  if (match) {
+    destinationIndex = match.index;
+  }
 
   return (
     <main id="main" className="grid-container grid-container--destination flow">

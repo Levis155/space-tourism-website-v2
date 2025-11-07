@@ -1,6 +1,7 @@
 "use client";
 
-import { useRouter } from "next/navigation";
+import classNames from "classnames";
+import { useRouter, useSearchParams } from "next/navigation";
 
 export const destinations = [
   { label: "Moon", index: 0 },
@@ -11,6 +12,8 @@ export const destinations = [
 
 const TabList = () => {
   const router = useRouter();
+  const searchParams = useSearchParams();
+  const name = searchParams.get("name") ?? "Moon";
 
   return (
     <div
@@ -21,7 +24,11 @@ const TabList = () => {
       {destinations.map((destination) => (
         <button
           key={destination.index}
-          className="uppercase ff-sans-cond text-accent letter-spacing-2"
+          className={`uppercase ff-sans-cond text-accent letter-spacing-2 ${classNames(
+            {
+              "underline-indicator-selected": destination.label === name,
+            }
+          )}`}
           onClick={() => {
             const query =
               destination.label === "Moon" ? "" : `?name=${destination.label}`;
