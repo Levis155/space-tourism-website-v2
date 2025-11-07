@@ -32,12 +32,7 @@ const DestinationPage = () => {
         />
       </picture>
       <TabList name={name} />
-      <article
-        className="destination-info flow"
-        id="moon-tab"
-        tabIndex={0}
-        role="tabpanel"
-      >
+      <article className="destination-info flow">
         <h2 className="fs-800 uppercase ff-bellefair">
           {data.destinations[destinationIndex].name}
         </h2>
