@@ -36,38 +36,6 @@ const DotIndicators = ({ role }: { role: string }) => {
           <span className="sr-only">{r.label}</span>
         </button>
       ))}
-      {/* <button
-        aria-selected="true"
-        aria-controls="commander-tab"
-        role="tab"
-        data-image="commander-image"
-      >
-        <span className="sr-only">The commander</span>
-      </button>
-      <button
-        aria-selected="false"
-        aria-controls="mission-tab"
-        role="tab"
-        data-image="mission-image"
-      >
-        <span className="sr-only">The mission specialist</span>
-      </button>
-      <button
-        aria-selected="false"
-        aria-controls="pilot-tab"
-        role="tab"
-        data-image="pilot-image"
-      >
-        <span className="sr-only">The pilot</span>
-      </button>
-      <button
-        aria-selected="false"
-        aria-controls="crew-tab"
-        role="tab"
-        data-image="crew-image"
-      >
-        <span className="sr-only">The crew engineer</span>
-      </button> */}
     </div>
   );
 };
