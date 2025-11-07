@@ -21,7 +21,7 @@ const CrewPage = () => {
       <h1 className="numbered-title">
         <span aria-hidden="true">02</span> Meet your crew
       </h1>
-      <DotIndicators />
+      <DotIndicators role={role ?? ""} />
 
       <article className="crew-details flow" id="commander-tab" role="tabpanel">
         <header className="flow flow--space-small">

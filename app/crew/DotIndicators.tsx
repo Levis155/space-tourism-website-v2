@@ -1,5 +1,6 @@
 "use client";
 
+import classNames from "classnames";
 import { useRouter } from "next/navigation";
 
 export const roles = [
@@ -13,7 +14,7 @@ export const roles = [
   { label: "The crew engineer", query: "crew-engineer", roleIndex: 3 },
 ];
 
-const DotIndicators = () => {
+const DotIndicators = ({ role }: { role: string }) => {
   const router = useRouter();
   return (
     <div
@@ -21,15 +22,18 @@ const DotIndicators = () => {
       role="tablist"
       aria-label="crew member list"
     >
-      {roles.map((role) => (
+      {roles.map((r) => (
         <button
-          key={role.label}
+          className={classNames({
+            active: r.query === role,
+          })}
+          key={r.label}
           onClick={() => {
-            const query = role.query ? `?role=${role.query}` : "";
+            const query = r.query ? `?role=${r.query}` : "";
             router.push(`/crew${query}`);
           }}
         >
-          <span className="sr-only">{role.label}</span>
+          <span className="sr-only">{r.label}</span>
         </button>
       ))}
       {/* <button
