@@ -2,7 +2,7 @@
 
 import { useRouter } from "next/navigation";
 
-const technologies = [
+export const technologies = [
   { label: "1", name: "launch-vehicle", index: 0 },
   { label: "2", name: "spaceport", index: 1 },
   { label: "3", name: "space-capsule", index: 2 },

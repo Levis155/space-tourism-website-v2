@@ -1,7 +1,20 @@
-import React from "react";
-import NumberedIndicators from "./NumberedIndicators";
+"use client";
+
+import NumberedIndicators, { technologies } from "./NumberedIndicators";
+import { useSearchParams } from "next/navigation";
+import data from "@/data.json";
 
 const TechnologyPage = () => {
+  const searchParams = useSearchParams();
+
+  const name = searchParams.get("name") ?? "launch-vehicle";
+  let technologyIndex = 0;
+  const match = technologies.find((technology) => technology.name === name);
+
+  if (match) {
+    technologyIndex = match.index;
+  }
+
   return (
     <main id="main" className="grid-container grid-container--technology flow">
       <h1 className="numbered-title">
@@ -10,12 +23,7 @@ const TechnologyPage = () => {
 
       <NumberedIndicators />
 
-      {/* Launch Vehicle */}
-      <article
-        className="technology-details flow"
-        id="vehicle-tab"
-        role="tabpanel"
-      >
+      <article className="technology-details flow">
         <header className="flow flow--space-small">
           <h2
             className="text-accent fs-400 ff-sans-cond uppercase"
@@ -23,106 +31,25 @@ const TechnologyPage = () => {
           >
             The terminology...
           </h2>
-          <p id="technology-name" className="fs-700 ff-serif uppercase">
-            Launch vehicle
+          <p className="fs-700 ff-serif uppercase">
+            {data.technology[technologyIndex].name}
           </p>
         </header>
 
         <p id="technology-description" className="text-accent">
-          A launch vehicle or carrier rocket is a rocket-propelled vehicle used
-          to carry a payload from Earth's surface to space, usually to Earth
-          orbit or beyond. Our WEB-X carrier rocket is the most powerful in
-          operation. Standing 150 metres tall, it's quite an awe-inspiring sight
-          on the launch pad!
+          {data.technology[technologyIndex].description}
         </p>
       </article>
 
-      {/* SpacePort */}
-      <article
-        hidden
-        className="technology-details flow"
-        id="spaceport-tab"
-        role="tabpanel"
-      >
-        <header className="flow flow--space-small">
-          <h2
-            className="text-accent fs-400 ff-sans-cond uppercase"
-            style={{ letterSpacing: "0.1475rem" }}
-          >
-            The terminology...
-          </h2>
-          <p id="technology-name" className="fs-700 ff-serif uppercase">
-            Spaceport
-          </p>
-        </header>
-
-        <p id="technology-description" className="text-accent">
-          A spaceport or cosmodrome is a site for launching (or receiving)
-          spacecraft, by analogy to the seaport for ships or airport for
-          aircraft. Based in the famous Cape Canaveral, our spaceport is ideally
-          situated to take advantage of the Earth’s rotation for launch.
-        </p>
-      </article>
-
-      {/* Space Capsule */}
-      <article
-        hidden
-        className="technology-details flow"
-        id="capsule-tab"
-        role="tabpanel"
-      >
-        <header className="flow flow--space-small">
-          <h2
-            className="text-accent fs-400 ff-sans-cond uppercase"
-            style={{ letterSpacing: "0.1475rem" }}
-          >
-            The terminology...
-          </h2>
-          <p id="technology-name" className="fs-700 ff-serif uppercase">
-            Space capsule
-          </p>
-        </header>
-
-        <p id="technology-description" className="text-accent">
-          A space capsule is an often-crewed spacecraft that uses a blunt-body
-          reentry capsule to reenter the Earth's atmosphere without wings. Our
-          capsule is where you'll spend your time during the flight. It includes
-          a space gym, cinema, and plenty of other activities to keep you
-          entertained.
-        </p>
-      </article>
-
-      <picture id="vehicle-image">
+      <picture>
         <img
-          src="/technology/image-launch-vehicle-portrait.jpg"
-          alt="the launch vehicle"
+          src={data.technology[technologyIndex].images.portrait}
+          alt={data.technology[technologyIndex].name}
         />
         {/* <img
           hidden
           src="/technology/image-launch-vehicle-landscape.jpg"
           alt="the launch vehicle"
-        />  */}
-      </picture>
-      <picture hidden id="capsule-image">
-        <img
-          src="/technology/image-space-capsule-portrait.jpg"
-          alt="the space capsule"
-        />
-        {/* <img
-          hidden
-          src="/technology/image-space-capsule-landscape.jpg"
-          alt="the space capsule"
-        />  */}
-      </picture>
-      <picture hidden id="spaceport-image">
-        <img
-          src="/technology/image-spaceport-portrait.jpg"
-          alt="the spaceport"
-        />
-        {/* <img
-          hidden
-          src="/technology/image-spaceport-landscape.jpg"
-          alt="the spaceport"
         />  */}
       </picture>
     </main>
