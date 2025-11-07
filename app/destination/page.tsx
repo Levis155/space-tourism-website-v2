@@ -31,7 +31,7 @@ const DestinationPage = () => {
           alt={`the ${data.destinations[destinationIndex].name}`}
         />
       </picture>
-      <TabList />
+      <TabList name={name} />
       <article
         className="destination-info flow"
         id="moon-tab"

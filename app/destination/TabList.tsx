@@ -1,7 +1,7 @@
 "use client";
 
 import classNames from "classnames";
-import { useRouter, useSearchParams } from "next/navigation";
+import { useRouter } from "next/navigation";
 
 export const destinations = [
   { label: "Moon", index: 0 },
@@ -10,17 +10,11 @@ export const destinations = [
   { label: "Titan", index: 3 },
 ];
 
-const TabList = () => {
+const TabList = ({ name }: { name: string }) => {
   const router = useRouter();
-  const searchParams = useSearchParams();
-  const name = searchParams.get("name") ?? "Moon";
 
   return (
-    <div
-      className="tab-list underline-indicators flex"
-      role="tablist"
-      aria-label="destination list"
-    >
+    <div className="tab-list underline-indicators flex">
       {destinations.map((destination) => (
         <button
           key={destination.index}
@@ -38,46 +32,6 @@ const TabList = () => {
           {destination.label}
         </button>
       ))}
-      {/* <button
-          aria-selected="true"
-          role="tab"
-          aria-controls="moon-tab"
-          className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={0}
-          data-image="moon-image"
-        >
-          Moon
-        </button>
-        <button
-          aria-selected="false"
-          role="tab"
-          aria-controls="mars-tab"
-          className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={-1}
-          data-image="mars-image"
-        >
-          Mars
-        </button>
-        <button
-          aria-selected="false"
-          role="tab"
-          aria-controls="europa-tab"
-          className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={-1}
-          data-image="europa-image"
-        >
-          Europa
-        </button>
-        <button
-          aria-selected="false"
-          role="tab"
-          aria-controls="titan-tab"
-          className="uppercase ff-sans-cond text-accent letter-spacing-2"
-          tabIndex={-1}
-          data-image="titan-image"
-        >
-          Titan
-        </button> */}
     </div>
   );
 };
