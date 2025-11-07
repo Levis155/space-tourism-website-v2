@@ -26,12 +26,12 @@ const TechnologyPage = () => {
       <article className="technology-details flow">
         <header className="flow flow--space-small">
           <h2
-            className="text-accent fs-400 ff-sans-cond uppercase"
+            className="text-accent fs-400 ff-barlow-cond uppercase"
             style={{ letterSpacing: "0.1475rem" }}
           >
             The terminology...
           </h2>
-          <p className="fs-700 ff-serif uppercase">
+          <p className="fs-700 ff-bellefair uppercase">
             {data.technology[technologyIndex].name}
           </p>
         </header>

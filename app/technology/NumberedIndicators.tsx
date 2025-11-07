@@ -20,7 +20,7 @@ const NumberedIndicators = ({ name }: { name: string }) => {
       {technologies.map((technology) => (
         <button
           key={technology.index}
-          className={`bg-dark text-white fs-600 ff-serif ${classNames({
+          className={`bg-dark text-white fs-600 ff-bellefair ${classNames({
             active: technology.name === name,
           })}`}
           onClick={() => {
