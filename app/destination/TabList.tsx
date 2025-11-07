@@ -18,7 +18,7 @@ const TabList = ({ name }: { name: string }) => {
       {destinations.map((destination) => (
         <button
           key={destination.index}
-          className={`uppercase ff-sans-cond text-accent letter-spacing-2 ${classNames(
+          className={`uppercase ff-barlow-cond text-accent letter-spacing-2 ${classNames(
             {
               "underline-indicator-selected": destination.label === name,
             }

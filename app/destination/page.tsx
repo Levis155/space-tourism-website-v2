@@ -38,7 +38,7 @@ const DestinationPage = () => {
         tabIndex={0}
         role="tabpanel"
       >
-        <h2 className="fs-800 uppercase ff-serif">
+        <h2 className="fs-800 uppercase ff-bellefair">
           {data.destinations[destinationIndex].name}
         </h2>
 
@@ -47,13 +47,13 @@ const DestinationPage = () => {
         <div className="destination-meta flex">
           <div>
             <h3 className="text-accent fs-200 uppercase">Avg. distance</h3>
-            <p className="ff-serif uppercase">
+            <p className="ff-bellefair uppercase">
               {data.destinations[destinationIndex].distance}
             </p>
           </div>
           <div>
             <h3 className="text-accent fs-200 uppercase">Est. travel time</h3>
-            <p className="ff-serif uppercase">
+            <p className="ff-bellefair uppercase">
               {data.destinations[destinationIndex].travel}
             </p>
           </div>
