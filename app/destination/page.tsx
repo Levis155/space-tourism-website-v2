@@ -1,7 +1,7 @@
 "use client";
 
 import { useSearchParams } from "next/navigation";
-import TabList, { destinations } from "./TabList";
+import UnderlineIndicators, { destinations } from "./UnderlineIndicators";
 import data from "@/data.json";
 
 const DestinationPage = () => {
@@ -31,7 +31,7 @@ const DestinationPage = () => {
           alt={`the ${data.destinations[destinationIndex].name}`}
         />
       </picture>
-      <TabList name={name} />
+      <UnderlineIndicators name={name} />
       <article className="destination-info flow">
         <h2 className="fs-800 uppercase ff-bellefair">
           {data.destinations[destinationIndex].name}

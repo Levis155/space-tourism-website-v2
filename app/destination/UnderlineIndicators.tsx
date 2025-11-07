@@ -10,7 +10,7 @@ export const destinations = [
   { label: "Titan", index: 3 },
 ];
 
-const TabList = ({ name }: { name: string }) => {
+const UnderlineIndicators = ({ name }: { name: string }) => {
   const router = useRouter();
 
   return (
@@ -36,4 +36,4 @@ const TabList = ({ name }: { name: string }) => {
   );
 };
 
-export default TabList;
+export default UnderlineIndicators;
