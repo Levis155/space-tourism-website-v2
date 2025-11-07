@@ -1,5 +1,6 @@
 "use client";
 
+import classNames from "classnames";
 import { useRouter } from "next/navigation";
 
 export const technologies = [
@@ -8,7 +9,7 @@ export const technologies = [
   { label: "3", name: "space-capsule", index: 2 },
 ];
 
-const NumberedIndicators = () => {
+const NumberedIndicators = ({ name }: { name: string }) => {
   const router = useRouter();
   return (
     <div
@@ -19,7 +20,9 @@ const NumberedIndicators = () => {
       {technologies.map((technology) => (
         <button
           key={technology.index}
-          className="bg-dark text-white fs-600 ff-serif"
+          className={`bg-dark text-white fs-600 ff-serif ${classNames({
+            active: technology.name === name,
+          })}`}
           onClick={() => {
             const query =
               technology.name === "launch-vehicle"

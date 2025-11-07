@@ -470,7 +470,7 @@ select {
   border-color: hsl(var(--clr-white) / 1);
 }
 
-.number-indicators > [aria-selected="true"] {
+.number-indicators > .active {
   color: hsl(var(--clr-dark));
   background-color: hsl(var(--clr-white) / 1);
 }

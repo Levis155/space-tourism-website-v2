@@ -21,7 +21,7 @@ const TechnologyPage = () => {
         <span aria-hidden="true">03</span> Space launch 101
       </h1>
 
-      <NumberedIndicators />
+      <NumberedIndicators name={name} />
 
       <article className="technology-details flow">
         <header className="flow flow--space-small">
