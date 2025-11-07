@@ -1,4 +1,5 @@
 import React from "react";
+import DotIndicators from "./DotIndicators";
 
 const CrewPage = () => {
   return (
@@ -6,45 +7,7 @@ const CrewPage = () => {
       <h1 className="numbered-title">
         <span aria-hidden="true">02</span> Meet your crew
       </h1>
-
-      <div
-        className="dot-indicators flex"
-        role="tablist"
-        aria-label="crew member list"
-      >
-        <button
-          aria-selected="true"
-          aria-controls="commander-tab"
-          role="tab"
-          data-image="commander-image"
-        >
-          <span className="sr-only">The commander</span>
-        </button>
-        <button
-          aria-selected="false"
-          aria-controls="mission-tab"
-          role="tab"
-          data-image="mission-image"
-        >
-          <span className="sr-only">The mission specialist</span>
-        </button>
-        <button
-          aria-selected="false"
-          aria-controls="pilot-tab"
-          role="tab"
-          data-image="pilot-image"
-        >
-          <span className="sr-only">The pilot</span>
-        </button>
-        <button
-          aria-selected="false"
-          aria-controls="crew-tab"
-          role="tab"
-          data-image="crew-image"
-        >
-          <span className="sr-only">The crew engineer</span>
-        </button>
-      </div>
+      <DotIndicators />
 
       {/* commander */}
       <article className="crew-details flow" id="commander-tab" role="tabpanel">
