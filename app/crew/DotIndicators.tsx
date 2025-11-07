@@ -2,11 +2,15 @@
 
 import { useRouter } from "next/navigation";
 
-const roles = [
-  { label: "The commander", query: "" },
-  { label: "The mission specialist", query: "mission-specialist" },
-  { label: "The pilot", query: "pilot" },
-  { label: "The crew engineer", query: "crew-engineer" },
+export const roles = [
+  { label: "The commander", query: "", roleIndex: 0 },
+  {
+    label: "The mission specialist",
+    query: "mission-specialist",
+    roleIndex: 1,
+  },
+  { label: "The pilot", query: "pilot", roleIndex: 2 },
+  { label: "The crew engineer", query: "crew-engineer", roleIndex: 3 },
 ];
 
 const DotIndicators = () => {
