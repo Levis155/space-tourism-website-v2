@@ -424,11 +424,13 @@ select {
   background-color: transparent;
 }
 
-.underline-indicators > *:hover {
+.underline-indicators > *:hover,
+.underline-indicators > *:focus {
   border-color: hsl(var(--clr-white) / 0.5);
 }
 
-.underline-indicator-selected {
+.underline-indicators > .active,
+.underline-indicators > .selected {
   color: hsl(var(--clr-white) / 1);
   border-color: hsl(var(--clr-white) / 1);
 }

@@ -20,7 +20,7 @@ const TabList = ({ name }: { name: string }) => {
           key={destination.index}
           className={`uppercase ff-barlow-cond text-accent letter-spacing-2 ${classNames(
             {
-              "underline-indicator-selected": destination.label === name,
+              selected: destination.label === name,
             }
           )}`}
           onClick={() => {
