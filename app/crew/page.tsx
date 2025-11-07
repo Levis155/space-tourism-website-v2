@@ -25,10 +25,10 @@ const CrewPage = () => {
 
       <article className="crew-details flow" id="commander-tab" role="tabpanel">
         <header className="flow flow--space-small">
-          <h2 className="fs-600 ff-serif uppercase">
+          <h2 className="fs-600 ff-bellefair uppercase">
             {data.crew[roleIndex].role}
           </h2>
-          <p className="fs-700 uppercase ff-serif">
+          <p className="fs-700 uppercase ff-bellefair">
             {data.crew[roleIndex].name}
           </p>
         </header>
