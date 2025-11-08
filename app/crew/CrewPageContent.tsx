@@ -2,19 +2,19 @@
 
 import data from "@/data.json";
 import { useSearchParams } from "next/navigation";
-import DotIndicators, { roles } from "./DotIndicators";
+import DotIndicators, { crewMembers } from "./DotIndicators";
 
 const CrewPageContent = () => {
   const searchParams = useSearchParams();
 
-  const role = searchParams.get("role");
+  const role = searchParams.get("role") ?? "commander";
 
-  let roleIndex = 0;
+  let crewIndex = 0;
 
-  const match = roles.find((r) => role === r.query);
+  const match = crewMembers.find((crewMember) => role === crewMember.role);
 
   if (match) {
-    roleIndex = match.roleIndex;
+    crewIndex = match.index;
   }
   return (
     <main id="main" className="grid-container grid-container--crew flow">
@@ -26,20 +26,20 @@ const CrewPageContent = () => {
       <article className="crew-details flow" id="commander-tab" role="tabpanel">
         <header className="flow flow--space-small">
           <h2 className="fs-600 ff-bellefair uppercase">
-            {data.crew[roleIndex].role}
+            {data.crew[crewIndex].role}
           </h2>
           <p className="fs-700 uppercase ff-bellefair">
-            {data.crew[roleIndex].name}
+            {data.crew[crewIndex].name}
           </p>
         </header>
-        <p>{data.crew[roleIndex].bio}</p>
+        <p>{data.crew[crewIndex].bio}</p>
       </article>
 
       <picture>
-        <source srcSet={data.crew[roleIndex].images.webp} type="image/webp" />
+        <source srcSet={data.crew[crewIndex].images.webp} type="image/webp" />
         <img
-          src={data.crew[roleIndex].images.png}
-          alt={data.crew[roleIndex].name}
+          src={data.crew[crewIndex].images.png}
+          alt={data.crew[crewIndex].name}
         />
       </picture>
     </main>

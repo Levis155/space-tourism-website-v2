@@ -3,15 +3,15 @@
 import classNames from "classnames";
 import { useRouter } from "next/navigation";
 
-export const roles = [
-  { label: "The commander", query: "", roleIndex: 0 },
+export const crewMembers = [
+  { label: "The commander", role: "commander", index: 0 },
   {
     label: "The mission specialist",
-    query: "mission-specialist",
-    roleIndex: 1,
+    role: "mission-specialist",
+    index: 1,
   },
-  { label: "The pilot", query: "pilot", roleIndex: 2 },
-  { label: "The crew engineer", query: "crew-engineer", roleIndex: 3 },
+  { label: "The pilot", role: "pilot", index: 2 },
+  { label: "The crew engineer", role: "crew-engineer", index: 3 },
 ];
 
 const DotIndicators = ({ role }: { role: string }) => {
@@ -22,18 +22,19 @@ const DotIndicators = ({ role }: { role: string }) => {
       role="tablist"
       aria-label="crew member list"
     >
-      {roles.map((r) => (
+      {crewMembers.map((crewMember) => (
         <button
           className={classNames({
-            active: r.query === role,
+            active: crewMember.role === role,
           })}
-          key={r.label}
+          key={crewMember.index}
           onClick={() => {
-            const query = r.query ? `?role=${r.query}` : "";
+            const query =
+              crewMember.role === "commander" ? "" : `?role=${crewMember.role}`;
             router.push(`/crew${query}`);
           }}
         >
-          <span className="sr-only">{r.label}</span>
+          <span className="sr-only">{crewMember.label}</span>
         </button>
       ))}
     </div>
