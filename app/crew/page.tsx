@@ -1,7 +1,12 @@
+import { Suspense } from "react";
 import CrewPageContent from "./CrewPageContent";
 
 const CrewPage = () => {
-  return <CrewPageContent />;
+  return (
+    <Suspense>
+      <CrewPageContent />
+    </Suspense>
+  );
 };
 
 export default CrewPage;

@@ -1,7 +1,12 @@
+import { Suspense } from "react";
 import DestinationPageContent from "./DestinationPageContent";
 
 const DestinationPage = () => {
-  return <DestinationPageContent />;
+  return (
+    <Suspense>
+      <DestinationPageContent />
+    </Suspense>
+  );
 };
 
 export default DestinationPage;
